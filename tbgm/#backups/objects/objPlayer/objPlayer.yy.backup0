@@ -1,0 +1,31 @@
+// 2022-11-04 14:35:36
+#event properties (no comments/etc. here are saved)
+parent_index = -1;
+uses_physics = false;
+
+#event create
+objTypewriter.addToQueue("I am playing so my name is player.");
+objTypewriter.addToQueue("I am playing so my name is aplayer.");
+objTypewriter.addToQueue("I am playing so my name is bplayer.");
+objTypewriter.addToQueue("I am playing so my name is cplayer.");
+
+
+
+
+
+
+#event step
+// Go to next dialogue
+if (keyboard_check_pressed(vk_space))
+{
+	var _tw = objTypewriter;
+	var _ac = _tw.getActive();
+	if (_ac)
+	{
+		_tw.typeNext();
+	}
+	else
+	{
+		_tw.setActive(true);
+	}
+}
